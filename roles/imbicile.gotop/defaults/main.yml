@@ -1,0 +1,9 @@
+---
+# defaults file for roles/imbicile.gotop
+
+gotop_version: 4.1.1
+gotop_release_system: linux_amd64
+gotop_release_name: gotop_v{{ gotop_version }}_{{ gotop_release_system }}
+
+gotop_url: https://github.com/xxxserxxx/gotop/releases/download/v{{ gotop_version }}/{{ gotop_release_name }}.tgz
+gotop_bin: /usr/bin/

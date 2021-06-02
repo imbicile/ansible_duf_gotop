@@ -1,0 +1,27 @@
+---
+# tasks file for roles/imbicile.gotop
+
+- name: Create tmp dir
+  file:
+    path: "/tmp/{{ gotop_release_name }}"
+    state: directory
+
+- name: Download package
+  get_url:
+    url: "{{ gotop_url }}"
+    dest: "/tmp/{{ gotop_release_name }}.tgz"
+
+- name: Extract package
+  unarchive:
+    src: "/tmp/{{ gotop_release_name }}.tgz"
+    dest: "/tmp/{{ gotop_release_name }}"
+    copy: no
+
+- name: Copy binary
+  copy:
+    src: "/tmp/{{ gotop_release_name }}/gotop"
+    dest: "{{ gotop_bin }}"
+    remote_src: true
+    mode: 0755
+    owner: root
+    group: root

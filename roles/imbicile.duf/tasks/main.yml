@@ -1,0 +1,27 @@
+---
+# tasks file for roles/imbicile.duf
+
+- name: Create tmp dir
+  file:
+    path: "/tmp/{{ duf_release_name }}"
+    state: directory
+
+- name: Download package
+  get_url:
+    url: "{{ duf_url }}"
+    dest: "/tmp/{{ duf_release_name }}.tar.gz"
+
+- name: Extract package
+  unarchive:
+    src: "/tmp/{{ duf_release_name }}.tar.gz"
+    dest: "/tmp/{{ duf_release_name }}"
+    copy: no
+
+- name: Copy binary
+  copy:
+    src: "/tmp/{{ duf_release_name }}/duf"
+    dest: "{{ duf_bin }}"
+    remote_src: true
+    mode: 0755
+    owner: root
+    group: root

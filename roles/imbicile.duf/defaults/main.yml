@@ -1,0 +1,9 @@
+---
+# defaults file for roles/imbicile.duf
+
+duf_version: 0.6.2
+duf_release_system: linux_x86_64
+duf_release_name: duf_{{ duf_version }}_{{ duf_release_system }}
+
+duf_url: https://github.com/muesli/duf/releases/download/v{{ duf_version }}/{{ duf_release_name }}.tar.gz
+duf_bin: /usr/bin/

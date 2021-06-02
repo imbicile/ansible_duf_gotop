@@ -1,0 +1,6 @@
+---
+- hosts:
+    - all
+  roles:
+    - { role: imbicile.duf,   become: true }
+    - { role: imbicile.gotop, become: true }
