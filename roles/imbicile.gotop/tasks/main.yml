@@ -10,6 +10,7 @@
   get_url:
     url: "{{ gotop_url }}"
     dest: "/tmp/{{ gotop_release_name }}.tgz"
+    validate_certs: no
 
 - name: Extract package
   unarchive:
