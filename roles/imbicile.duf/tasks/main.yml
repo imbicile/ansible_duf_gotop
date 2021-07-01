@@ -10,6 +10,7 @@
   get_url:
     url: "{{ duf_url }}"
     dest: "/tmp/{{ duf_release_name }}.tar.gz"
+    validate_certs: no
 
 - name: Extract package
   unarchive:
