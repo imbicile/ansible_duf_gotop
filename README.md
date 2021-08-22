@@ -9,21 +9,21 @@ https://github.com/xxxserxxx/gotop
 
 ## Example Playbook
 ```yml
-    ---
-    - hosts:
-        - all
-      roles:
-        - { role: imbicile.duf,   become: true }
-        - { role: imbicile.gotop, become: true }
+---
+- hosts:
+    - all
+  roles:
+    - { role: imbicile.duf,   become: true }
+    - { role: imbicile.gotop, become: true }
 ```
 ## Example Local Playbook
 ```yml
-    ---
-    - hosts: 127.0.0.1
-      connection: local
-      roles:
-        - { role: imbicile.duf,   become: true }
-        - { role: imbicile.gotop, become: true }
+---
+- hosts: 127.0.0.1
+  connection: local
+  roles:
+    - { role: imbicile.duf,   become: true }
+    - { role: imbicile.gotop, become: true }
 ```
 ## Run
 ```sh
